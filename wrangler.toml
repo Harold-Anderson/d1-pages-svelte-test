@@ -1,0 +1,9 @@
+name = "d1-test"
+ compatibility_date = "2024-10-23"
+ pages_build_output_dir = "./svelte-kit/cloudflare"
+
+[[d1_databases]]
+binding = "DB" # Name of the binding in your code
+database_name = "sveltedb" # Name of the database
+database_id = "8169237a-55a3-41de-a2e4-6b28db6c51c8"
+preview_database_id = "DB"
