@@ -1,9 +1,17 @@
 name = "d1-test"
- compatibility_date = "2024-10-23"
- pages_build_output_dir = "./svelte-kit/cloudflare"
+ compatibility_date = "2024-10-11"
+ pages_build_output_dir = "./svelte-kit/cloudflare" # https://developers.cloudflare.com/pages/functions/wrangler-configuration/
 
 [[d1_databases]]
 binding = "DB" # Name of the binding in your code
+
+# The name and ID of the D1 database from the Cloudflare dashboard.
 database_name = "sveltedb" # Name of the database
 database_id = "8169237a-55a3-41de-a2e4-6b28db6c51c8"
+
+#  The preview ID of this D1 database. 
+#  If provided, wrangler dev will use this ID. 
+#  Otherwise, it will use database_id. 
+#  This option is required when using wrangler dev --remote
+#  https://developers.cloudflare.com/workers/wrangler/configuration/
 preview_database_id = "DB"
