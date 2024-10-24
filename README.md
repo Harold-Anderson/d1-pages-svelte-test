@@ -45,7 +45,9 @@ At this point, you can open a browser and navigate to http://127.0.0.1:8788 or h
 Surf to http://127.0.0.1:8788/server, and you should see the list of users from the D1 database.
 
 ## Deploy your project to Cloudflare Pages
-Create remote database:
+Create the remote database on the Cloudflare Pages dashboard.  Click on ``Workers & Pages`` and then ``D1 Databases``.  Click on ``Create Database``.  Give it the name ``sveltedb``.  Click ``Create Database``.  Copy the Database ID and put it in your wrangler.toml file, overwriting mine.
+
+Now you can create the tables and insert data into the remote database.
 ```
 pnpm exec wrangler d1 execute sveltedb --remote --command="CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, email TEXT);" # Create the table
 
@@ -57,10 +59,6 @@ Add secrets to your project on Cloudflare if needed by using the dashboard.  No 
 `` pnpm exec wrangler pages deploy .svelte-kit/cloudflare ``
 
 This will create the `d1-test` project on Cloudflare Pages.  Now you need to bind the D1 database to the project.  Go to the project settings and add the D1 database.  On the newly created Pages project in the [Cloudflare Dashboard](https://dash.cloudflare.com), click on your project and go to ``Settings > Variables & Secrets > Bindings.``  Click on ``Add Binding`` and select the D1 database ``sveltedb`` you created earlier.  Give it the name ``DB``.  Click Save.
-
-The next step is to add the D1 database to the project configuration.  Edit ``wrangler.toml`` and add database id to the ``[[d1_databases]]`` section.  You can find the database id in the Cloudflare Dashboard imder Workers & Pages > D1 SQL Databases > sveltedb .  Click on the database and copy the Database ID.  Put it in the ``wrangler.toml`` file, overwriting my database_id, and redeploy your project.
-
-``database_id = "8169237a-55a3-41de-a2e4-6b28db6c51c8"``
 
 Now you can navigate to [https://xxxxx.d1-test-xxx.pages.dev/server](https://e2f02460.d1-test-2f2.pages.dev/server) and you should see the list of users from the D1 database.  The deployment url will be different for you, and you can see it
 
