@@ -58,6 +58,10 @@ Add secrets to your project on Cloudflare if needed by using the dashboard.  No 
 
 This will create the `d1-test` project on Cloudflare Pages.  Now you need to bind the D1 database to the project.  Go to the project settings and add the D1 database.  On the newly created Pages project in the [Cloudflare Dashboard](https://dash.cloudflare.com), click on your project and go to ``Settings > Variables & Secrets > Bindings.``  Click on ``Add Binding`` and select the D1 database ``sveltedb`` you created earlier.  Give it the name ``DB``.  Click Save.
 
+The next step is to add the D1 database to the project configuration.  Edit ``wrangler.toml`` and add database id to the ``[[d1_databases]]`` section.  You can find the database id in the Cloudflare Dashboard imder Workers & Pages > D1 SQL Databases > sveltedb .  Click on the database and copy the Database ID.  Put it in the ``wrangler.toml`` file, overwriting my database_id, and redeploy your project.
+
+``database_id = "8169237a-55a3-41de-a2e4-6b28db6c51c8"``
+
 Now you can navigate to [https://xxxxx.d1-test-xxx.pages.dev/server](https://e2f02460.d1-test-2f2.pages.dev/server) and you should see the list of users from the D1 database.  The deployment url will be different for you, and you can see it
 
 ```
