@@ -15,7 +15,7 @@ I use pnpm because it is faster and more flexible.  ``pnpm exec wrangler`` will 
 pnpm exec wrangler d1 execute sveltedb --local --command="INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');"
 ``
 
-Now your local D1 database is ready to use.
+Now your local D1 database is ready to use.  You do not have to create the database using  ``wrangler d1 create`` for a local database, as you will shortly do for the remote database.  You only need to make sure that the name of the database is specified in your ``wrangler.toml`` file.  The database will be created when you run the ``wrangler d1 execute`` command for the first time.
 
 ## Build your project
 ``pnpm run build``
