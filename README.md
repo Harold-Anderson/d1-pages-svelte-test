@@ -54,13 +54,13 @@ pnpm exec wrangler d1 execute sveltedb --remote --command="CREATE TABLE IF NOT E
 pnpm exec wrangler d1 execute sveltedb --remote --command="INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');" # Insert a row
 ```
 
-Add secrets to your project on Cloudflare if needed by using the dashboard.  No secrets are needed for this project.
+Add secrets to your project on Cloudflare if needed by using the dashboard.  No secrets are needed for this project. Secrets are runtime environment variables that are not included in the source code.  They are used to store sensitive information such as API keys, database passwords, etc.  They are encrypted and stored in the Cloudflare dashboard.  They are not visible in the source code.  While doing local development, you can set secrets in a .dev.vars file.  Add the ``.dev.vars`` file to your .gitignore file to prevent it from being checked into source control.  The .dev.vars file is not used when deploying to Cloudflare Pages.  The secrets are set in the Cloudflare dashboard.
 
 `` pnpm exec wrangler pages deploy .svelte-kit/cloudflare ``
 
 This will create the `d1-test` project on Cloudflare Pages.  Now you need to bind the D1 database to the project.  Go to the project settings and add the D1 database.  On the newly created Pages project in the [Cloudflare Dashboard](https://dash.cloudflare.com), click on your project and go to ``Settings > Variables & Secrets > Bindings.``  Click on ``Add Binding`` and select the D1 database ``sveltedb`` you created earlier.  Give it the name ``DB``.  Click Save.
 
-Now you can navigate to [https://xxxxx.d1-test-xxx.pages.dev/server](https://e2f02460.d1-test-2f2.pages.dev/server) and you should see the list of users from the D1 database.  The deployment url will be different for you, and you can see it
+Now you can navigate to [https://xxxxx.d1-test-xxx.pages.dev/server](https://e2f02460.d1-test-2f2.pages.dev/server) and you should see the list of users from the D1 database.  The deployment url will be different for you.  Here is the output:
 
 ```
 {"success":true,"meta":{"served_by":"v3-prod","duration":0.2025,"changes":0,"last_row_id":0,"changed_db":false,"size_after":49152,"rows_read":1,"rows_written":0},"results":[{"id":1,"name":"John Doe","email":"john@example.com"}]}
