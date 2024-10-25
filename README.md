@@ -5,9 +5,27 @@ Please note https://developers.cloudflare.com/d1/examples/d1-and-sveltekit/
 
 Please note that you [cannot do development](https://developers.cloudflare.com/d1/build-with-d1/local-development/) against a remote D1 database using Cloudflare Pages. You must use a local database for development.  
 
-## Create a local D1 database
+## Setup
 
-I use pnpm because it is faster and more flexible.  ``pnpm exec wrangler`` will run the locally installed version of wrangler, rather than the globally installed wrangler.
+I use pnpm because it is faster and more flexible than npm.  ``pnpm exec wrangler`` will run the locally installed version of wrangler, rather than the globally installed wrangler.
+
+Clone my repository: 
+```
+git clone https://github.com/Harold-Anderson/d1-pages-svelte-test.git
+cd d1-pages-test
+```
+
+Install the dependencies
+```
+pnpm i
+```
+Log in to wrangler
+
+```
+pnpm exec wrangler login
+```
+
+## Create a local D1 database
 
 Now let's populate the local database.  You do not have to create the database using  ``wrangler d1 create`` for a local database, as you will shortly do for the remote database.  You only need to make sure that the name of the database is specified in your ``wrangler.toml`` file.  The database will be created when you run the ``wrangler d1 execute`` command for the first time.
 
