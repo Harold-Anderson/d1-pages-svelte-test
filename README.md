@@ -13,11 +13,11 @@ Now let's populate the local database.  You do not have to create the database u
 
 
 ``` 
-   pnpm exec wrangler d1 execute sveltedb --local \
+   pnpm exec wrangler d1 execute sveltedb --local 
      --command="CREATE TABLE IF NOT EXISTS users (name TEXT, email TEXT);" 
 
-   pnpm exec wrangler d1 execute sveltedb --local \
-     --command="INSERT INTO users (name, email) \
+   pnpm exec wrangler d1 execute sveltedb --local 
+     --command="INSERT INTO users (name, email) 
      VALUES ('John Doe', 'john@example.com');"
 ```
 
