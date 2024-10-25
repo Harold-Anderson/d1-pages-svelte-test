@@ -68,7 +68,26 @@ This will create the `d1-test` project on Cloudflare Pages.  Now you need to bin
 Now you can navigate to [https://xxxxx.d1-test-xxx.pages.dev/server](https://e2f02460.d1-test-2f2.pages.dev/server) and you should see the list of users from the D1 database.  The deployment url will be different for you.  Here is the output:
 
 ```
-{"success":true,"meta":{"served_by":"v3-prod","duration":0.2025,"changes":0,"last_row_id":0,"changed_db":false,"size_after":49152,"rows_read":1,"rows_written":0},"results":[{"id":1,"name":"John Doe","email":"john@example.com"}]}
+{
+  "success": true,
+  "meta": {
+    "served_by": "v3-prod",
+    "duration": 0.1875,
+    "changes": 0,
+    "last_row_id": 0,
+    "changed_db": false,
+    "size_after": 49152,
+    "rows_read": 1,
+    "rows_written": 0
+  },
+  "results": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  ]
+}
 ```
 
 There is a real-time log you can enable. This is useful for debugging.  Unfortunately, is is difficult to find and not documented for Pages.  Here is the URL.  Substitute your own user id. https://dash.cloudflare.com/your-user-id/pages/view/d1-test
