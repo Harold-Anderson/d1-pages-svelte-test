@@ -74,7 +74,9 @@ Add secrets to your project on Cloudflare if needed by using the dashboard.  No 
 
 https://developers.cloudflare.com/workers/wrangler/commands/#deploy-1
 
-`` pnpm exec wrangler pages deploy .svelte-kit/cloudflare --branch production``
+```
+pnpm exec wrangler pages deploy .svelte-kit/cloudflare --branch production
+```
 
 This will create the `d1-test` project on Cloudflare Pages.  Now you need to bind the D1 database to the project.  Go to the project settings and add the D1 database.  On the newly created Pages project in the [Cloudflare Dashboard](https://d1-test-2f2.pages.dev/server), click on your project and go to ``Settings > Variables & Secrets > Bindings.``  Click on ``Add Binding`` and select the D1 database ``sveltedb`` you created earlier.  Give it the name ``DB``.  Click Save.
 
