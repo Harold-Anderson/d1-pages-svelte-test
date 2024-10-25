@@ -56,7 +56,7 @@ At this point, you can open a browser and navigate to http://127.0.0.1:8788 or h
 Surf to http://127.0.0.1:8788/server, and you should see the list of users from the D1 database.
 
 ## Deploy your project to Cloudflare Pages
-Create the remote database on the Cloudflare Pages dashboard.  You can either do this via the dashboard or via the command line. 
+Now we need to create the remote database.  You can either do this via the dashboard or via the command line. 
 In the Cloudflare Dashboard, click on ``Workers & Pages`` and then ``D1 SQL Database``.  Click on ``Create``.  Give it the name ``sveltedb``.  Click ``Create``. 
 Alternatively,
 
