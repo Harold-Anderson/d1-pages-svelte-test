@@ -9,11 +9,4 @@ binding = "DB" # Name of the binding in your code
 database_name = "sveltedb" # Name of the database
 database_id = "8169237a-55a3-41de-a2e4-6b28db6c51c8"
 
-#  The preview ID of this D1 database. 
-#  If provided, wrangler dev will use this ID. 
-#  Otherwise, it will use database_id. 
-#  This option is required when using wrangler dev --remote
-#  https://developers.cloudflare.com/workers/wrangler/configuration/
-preview_database_id = "DB"
-
 
