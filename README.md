@@ -15,7 +15,8 @@ Now let's populate the local database.  You do not have to create the database u
 ``` 
    pnpm exec wrangler d1 execute sveltedb --local 
      --command="CREATE TABLE IF NOT EXISTS users (name TEXT, email TEXT);" 
-
+```
+```
    pnpm exec wrangler d1 execute sveltedb --local 
      --command="INSERT INTO users (name, email) 
      VALUES ('John Doe', 'john@example.com');"
@@ -59,9 +60,14 @@ Create the remote database on the Cloudflare Pages dashboard.  Click on ``Worker
 
 Now you can create the tables and insert data into the remote database.
 ```
-pnpm exec wrangler d1 execute sveltedb --remote --command="CREATE TABLE IF NOT EXISTS users (name TEXT, email TEXT);" 
-
-pnpm exec wrangler d1 execute sveltedb --remote --command="INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');" 
+pnpm exec wrangler d1 execute sveltedb --remote 
+   --command="CREATE TABLE IF NOT EXISTS 
+   users (name TEXT, email TEXT);" 
+```
+```
+pnpm exec wrangler d1 execute sveltedb --remote 
+   --command="INSERT INTO users (name, email) 
+   VALUES ('John Doe', 'john@example.com');" 
 ```
 
 Add secrets to your project on Cloudflare if needed by using the dashboard.  No secrets are needed for this project. Secrets are runtime environment variables that are not included in the source code.  They are used to store sensitive information such as API keys, database passwords, etc.  They are encrypted and stored in the Cloudflare dashboard. While doing local development, you can set secrets in a .dev.vars file.  Add the ``.dev.vars`` file to your .gitignore file to prevent it from being checked into source control.  The .dev.vars file is not used when deploying to Cloudflare Pages.  The secrets are set in the Cloudflare dashboard. 
