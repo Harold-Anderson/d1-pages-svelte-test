@@ -56,9 +56,15 @@ At this point, you can open a browser and navigate to http://127.0.0.1:8788 or h
 Surf to http://127.0.0.1:8788/server, and you should see the list of users from the D1 database.
 
 ## Deploy your project to Cloudflare Pages
-Create the remote database on the Cloudflare Pages dashboard.  Click on ``Workers & Pages`` and then ``D1 Databases``.  Click on ``Create Database``.  Give it the name ``sveltedb``.  Click ``Create Database``.  Copy the Database ID and put it in your wrangler.toml file, overwriting mine.
+Create the remote database on the Cloudflare Pages dashboard.  You can either do this via the dashboard or via the command line. 
+In the Cloudflare Dashboard, click on ``Workers & Pages`` and then ``D1 SQL Database``.  Click on ``Create``.  Give it the name ``sveltedb``.  Click ``Create``. 
+Alternatively,
 
-Now you can create the tables and insert data into the remote database.
+```
+pnpm exec wrangler d1 create sveltedb
+```
+
+In both cases, you will get a database id.  Copy that into ``wrangler.toml``, overwriting mine. Now you can create the tables and insert data into the remote database.
 ```
 pnpm exec wrangler d1 execute sveltedb --remote 
    --command="CREATE TABLE IF NOT EXISTS 
