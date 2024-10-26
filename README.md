@@ -29,7 +29,7 @@ pnpm exec wrangler login
 
 Svelte is a full-stack framework, allowing you to choose where to execute your code. You can run your code on the server or the client, or both. In this example, we will run our code on the server.
 
-We implement the request as a [server route](https://svelte.dev/docs/kit/routing#server), which is indicated by naming the file ``+server.ts`` in the src/routes/server directory. The directory does not have to be named server, but the file does have to be `+server.ts` or `server.js`.
+We implement the request as a [server route](https://svelte.dev/docs/kit/routing#server), which is indicated by naming the file ``+server.ts`` in the src/routes/server directory. The directory does not have to be named server, but the file does have to be `+server.ts` or `+server.js`.
 
 ## Create a local D1 database
 
