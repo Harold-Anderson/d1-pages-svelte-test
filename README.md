@@ -12,7 +12,7 @@ I use pnpm because it is faster and more flexible than npm.  ``pnpm exec wrangle
 Clone my repository: 
 ```
 git clone https://github.com/Harold-Anderson/d1-pages-svelte-test.git
-cd d1-pages-test
+cd d1-pages-svelte-test
 ```
 
 Install the dependencies
