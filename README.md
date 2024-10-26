@@ -44,7 +44,7 @@ Now your local D1 database is ready to use.
 ## Build your project
 ``pnpm run build``
 
-This directs Svelte and Vite to create the compiled Javascript output in  ``.sveltekit/cloudflare``
+This directs Svelte and Vite to create the compiled Javascript output in  ``.svelte-kit/cloudflare``.  The reason the output is put into ``.svelte-kit/cloudflare`` is because the project uses the ``adapter-cloudflare`` adapter.  This is specified in ``svelte.config.js``.
 
 ## Run your project under wrangler
 ```
