@@ -51,7 +51,7 @@ This directs Svelte and Vite to create the compiled Javascript output in  ``.sve
 pnpm exec wrangler pages dev .svelte-kit/cloudflare
 ```
 
-It is important to understand that the Cloudflare execution environment is not Node.js.
+It is important to understand that the project is being run in a simulated Cloudflare execution environment, and that the Javascript files that are being executed are the ones that ``pnpm run build`` created.  This is not the same as running ``pnpm run dev``, which would run the project under Vite and Node.js.
 
 wrangler simulates the deployment environment as much as possible.  For instance, the backend is [workerd](https://blog.cloudflare.com/workerd-open-source-workers-runtime/), not Node.js, which is what ``vite`` and ``pnpm run dev`` would use.  The output will be:
 
